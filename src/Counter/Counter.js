@@ -2,19 +2,12 @@ import React from 'react'                           //import React, {Component} 
 import Button from '@material-ui/core/Button';
 
 class Counter extends React.Component {             //class Counter extends Component
-    constructor() {
-        super()               //trzeba wywołać constructor React.Component
-
-        this.state = {
-            number: 0,
-        }
-
-        this.inc = this.inc.bind(this)      //bindowanie w konstruktorze, na stałe łączy this z tą funkcją
+    
+    state = {           //Babel umozliwia pisanie wlaściwości luzem, które zostaną automatycznie wrzucone do constructora (tak jak metody jakos funkcje strzałkowe)
+        number: 0
     }
 
-    inc(){
-        this.setState({number: this.state.number + 1})
-    }
+    inc = () => this.setState({number: this.state.number + 1})      //to nie jest JavaScript! Babel umożliwia pisanie metod jako funkcji strzałkowych, ale wtedy nie będą one w prototypie
 
     render() {
        
@@ -39,7 +32,7 @@ class Counter extends React.Component {             //class Counter extends Comp
                         width: '100px',
                         height: '100px',
                     }}
-                    onClick={this.inc}       //onClick={ () => this.inc() }  //onClick={this.inc.bind(this)}
+                    onClick={this.inc}  
                 >
                     +
                 </Button>
