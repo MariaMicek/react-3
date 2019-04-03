@@ -6,7 +6,7 @@ import './index.css'
 const App = () => {
   return (
     <div>
-      <Counter number={5}/>
+      <Counter number={'0'}/>
       <TypeName />
     </div>
   )

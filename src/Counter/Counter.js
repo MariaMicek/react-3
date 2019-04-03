@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from '@material-ui/core/Button';
+import PropTypes from 'prop-types';
 
 class Counter extends React.Component {
 
@@ -74,6 +75,10 @@ class Counter extends React.Component {
 
 Counter.defaultProps = {
     number: 0
+}
+
+Counter.propTypes = {
+    number: PropTypes.number.isRequired,
 }
 
 export default Counter
