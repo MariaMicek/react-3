@@ -1,22 +1,26 @@
 import React from 'react'
 
 class LifeCycle extends React.Component {
-    constructor(){
-        super()
-        console.log('constructor')
+    componentDidMount(){
+        console.log('componentDidMount')        //4
     }
 
-    componentDidMount(){
-        console.log('componentDidMount')
+    componentWillMount(){
+        console.log('componentWillMount')       //2
     }
 
     render(){
-        console.log('render')
+        console.log('render')                   //3
         return(
             <div> 
                 Hello LifeCycle
             </div>
         )
+    }
+
+    constructor(){
+        super()
+        console.log('constructor')              //1
     }
 }
 
