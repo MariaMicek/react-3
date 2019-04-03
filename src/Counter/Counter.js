@@ -22,8 +22,7 @@ class Counter extends React.Component {
                 <h1
                     style={{
                         textAlign: 'center',
-                        marginTop: '30px',
-                        fontSize: '50px',
+                        fontSize: '50px'
 
                     }}
                 >
@@ -36,10 +35,11 @@ class Counter extends React.Component {
                         fontSize: '25px',
                         width: '100px',
                         height: '100px',
+                        margin: '10px'
                     }}
-                    onClick={this.inc}
+                    onClick={this.dec}
                 >
-                    +
+                    -
                 </Button>
                 <Button
                     variant={"outlined"}
@@ -48,10 +48,11 @@ class Counter extends React.Component {
                         fontSize: '25px',
                         width: '100px',
                         height: '100px',
+                        margin: '10px'
                     }}
-                    onClick={this.dec}
+                    onClick={this.inc}
                 >
-                    -
+                    +
                 </Button>
                 <div style={{ textAlign: "center" }}>
                     <Button
@@ -59,6 +60,7 @@ class Counter extends React.Component {
                         color={"secondary"}
                         style={{
                             fontSize: '20px',
+                            margin: '10px'
                         }}
                         onClick={this.reset}
                     >
