@@ -1,26 +1,31 @@
 import React from 'react'
 
 class LifeCycle extends React.Component {
-    componentDidMount(){
-        console.log('componentDidMount')        //4
+    constructor() {
+        super()
+
+        this.state = {
+            number: 0
+        }
+        console.log('constructor')
     }
 
-    componentWillMount(){
-        console.log('componentWillMount')       //2
+    componentDidMount() {
+        console.log('componentDidMount')
     }
 
-    render(){
-        console.log('render')                   //3
-        return(
-            <div> 
-                Hello LifeCycle
+    render() {
+        console.log('render')           //na początku wywołują się wszystkie metody, po kliknięciu na button wywołuje się tylko render!
+
+        return (
+            <div>
+                <button
+                    onClick={() => this.setState({ number: this.state.number + 1 })}
+                >
+                    CHANGE STATE
+                </button>
             </div>
         )
-    }
-
-    constructor(){
-        super()
-        console.log('constructor')              //1
     }
 }
 
