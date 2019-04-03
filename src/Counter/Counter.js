@@ -10,11 +10,12 @@ class Counter extends React.Component {             //class Counter extends Comp
         }
     }
 
+    inc(){
+        this.setState({number: this.state.number + 1})
+    }
+
     render() {
-        const inc = () => this.setState({
-            number: this.state.number + 1
-        })
-        
+       
         return (
             <div>
                 <h1
@@ -36,7 +37,7 @@ class Counter extends React.Component {             //class Counter extends Comp
                         width: '100px',
                         height: '100px',
                     }}
-                    onClick={inc}
+                    onClick={this.inc.bind(this)}
                 >
                     +
                 </Button>
