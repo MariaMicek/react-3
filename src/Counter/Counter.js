@@ -8,6 +8,8 @@ class Counter extends React.Component {             //class Counter extends Comp
         this.state = {
             number: 0,
         }
+
+        this.inc = this.inc.bind(this)      //bindowanie w konstruktorze, na stałe łączy this z tą funkcją
     }
 
     inc(){
@@ -37,7 +39,7 @@ class Counter extends React.Component {             //class Counter extends Comp
                         width: '100px',
                         height: '100px',
                     }}
-                    onClick={this.inc.bind(this)}
+                    onClick={this.inc}       //onClick={ () => this.inc() }  //onClick={this.inc.bind(this)}
                 >
                     +
                 </Button>
