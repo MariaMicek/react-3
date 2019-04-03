@@ -11,13 +11,17 @@ class Counter extends React.Component {             //class Counter extends Comp
     }
 
     render() {
+        const inc = () => this.setState({
+            number: this.state.number + 1
+        })
+        
         return (
             <div>
                 <h1
                     style={{
                         textAlign: 'center',
                         marginTop: '30px',
-                        fontSize: '40px',
+                        fontSize: '50px',
 
                     }}
                 >
@@ -32,6 +36,7 @@ class Counter extends React.Component {             //class Counter extends Comp
                         width: '100px',
                         height: '100px',
                     }}
+                    onClick={inc}
                 >
                     +
                 </Button>
