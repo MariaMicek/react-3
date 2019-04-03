@@ -6,8 +6,8 @@ class Counter extends React.Component {
     constructor(props) {
         super()
         this.state = {
-            initialNumber: props.number,
-            number: props.number
+            initialNumber: props.number,        //bez konstruktora: initialNumber: this.props.number
+            number: props.number                // number: props.number || 0 - na wypadek braku propsa (niżej defaultProps)
         }
     }
 
@@ -29,7 +29,6 @@ class Counter extends React.Component {
                 >
                     {this.state.number}
                 </h1>
-
                 <Button
                     variant={"outlined"}
                     color={"secondary"}
@@ -69,6 +68,10 @@ class Counter extends React.Component {
             </div>
         )
     }
+}
+
+Counter.defaultProps = {
+    number: 0
 }
 
 export default Counter
